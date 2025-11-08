@@ -9,6 +9,15 @@
 --color-secondary-yellow: #FFD028;
 }
 
+body {
+    font-family: 'Play', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+address{
+    font-style: normal;
+}
+
 ul{
     list-style-type: none;
 }
@@ -37,6 +46,13 @@ ul{
 
 .link{
     color:var(--color-brand-dark);
+    text-decoration: none;
+    font-family: Roboto;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
 }
 
 .link:hover{
@@ -53,6 +69,7 @@ ul{
     line-height: 114px;
     letter-spacing: 0%;
     text-transform: capitalize;
+    text-align: left;
 }
 
 .accent{
@@ -66,7 +83,7 @@ ul{
     font-size: 12px;
     line-height: 18px;
     letter-spacing: 0%;
-    text-align: center;
+    text-align: left;
     color: var(--color-secondary-dark-gray);
 }
 
@@ -121,4 +138,29 @@ ul{
     text-align: center;
     vertical-align: middle;
     color: var(--color-brand-white);
+}
+
+/* Footer */
+.address-link{
+    color: var(--color-brand-dark);
+    font-family: Roboto;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-decoration: none;
+}
+
+.address-link:hover {
+    color: var(--color-brand);
+}
+
+.address-copyright{
+    font-family: Roboto;
+    font-style: Regular;
+    font-size: 13px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--color-secondary-medium-gray);
 }
