@@ -1,166 +1,330 @@
-/* кольори */
-:root{
---color-brand:#2B7FFF;
---color-brand-dark:#011C44;
---color-brand-white: #FFFFFF;
---color-secondary-dark-gray: #4A4A4A;
---color-secondary-medium-gray: #747272;
---color-secondary-dark-blue: #011F4A;
---color-secondary-yellow: #FFD028;
+/* Кольори */
+:root {
+    --color-brand: #2b7fff;
+    --color-brand-dark: #011c44;
+    --color-brand-white: #ffffff;
+    --color-secondary-dark-gray: #4a4a4a;
+    --color-secondary-medium-gray: #747272;
+    --color-secondary-dark-blue: #011f4a;
+    --color-secondary-yellow: #ffd028;
+}
+
+/* Базові стилі */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Play', sans-serif;
-    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    color: var(--color-brand-dark);
+    background-color: #ffffff;
 }
 
-address{
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+address {
     font-style: normal;
 }
 
-ul{
-    list-style-type: none;
+.section {
+    padding: 80px 0;
 }
 
-/* Кнопка */
-.button-order{
-    width: 219px;
-    height: 53px;
-    opacity: 1;
-    gap: 10px;
+/* Контейнер */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ===== HEADER ===== */
+
+.header {
+    padding: 20px 0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 56px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 40px;
+}
+
+.header-socials {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Посилання в меню */
+.link {
+    color: var(--color-brand-dark);
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.link:hover {
+    color: var(--color-brand);
+}
+
+/* ===== HERO ===== */
+
+.hero-section {
+    padding: 122px 0 157px;
+}
+
+.hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.hero-content {
+    max-width: 530px;
+}
+
+.hero-label {
+    margin-bottom: 16px;
+    color: var(--color-brand-dark);
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+}
+
+.hero-title {
+    margin-bottom: 40px;
+    color: var(--color-brand);
+    font-family: "Play", sans-serif;
+    font-weight: 700;
+    font-size: 140px;
+    line-height: 1.1;
+    text-transform: capitalize;
+}
+
+.button-order {
     border-radius: 32px;
-    padding-top: 16px;
-    padding-right: 32px;
-    padding-bottom: 16px;
-    padding-left: 32px;
+    padding: 16px 32px;
     color: var(--color-brand-white);
     background-color: var(--color-brand);
     border: 2px solid var(--color-brand);
     cursor: pointer;
 }
 
-.button-order:hover{
+.button-order:hover {
     color: var(--color-brand-dark);
     background-color: transparent;
 }
 
-.link{
-    color:var(--color-brand-dark);
-    text-decoration: none;
-    font-family: Roboto;
+.text-1section {
+    margin-top: 16px;
+    max-width: 300px;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
-    font-style: Regular;
-    font-size: 18px;
-    line-height: 100%;
-    letter-spacing: 0%;
-}
-
-.link:hover{
-    color: var(--color-brand);
-}
-
-/* Hero section */
-.hero-title{
-    color: var(--color-brand);
-    font-family: Play;
-    font-weight: 700;
-    font-style: Bold;
-    font-size: 140px;
-    line-height: 114px;
-    letter-spacing: 0%;
-    text-transform: capitalize;
-    text-align: left;
-}
-
-.accent{
-    color: var(--color-brand);
-}
-
-.text-1section{
-    font-family: Roboto;
-    font-weight: 400;
-    font-style: Regular;
     font-size: 12px;
     line-height: 18px;
-    letter-spacing: 0%;
-    text-align: left;
     color: var(--color-secondary-dark-gray);
 }
 
-.header-2-text{
-    color:var(--color-brand-dark);
-    font-family: Play;
-    font-weight: 700;
-    font-style: Bold;
-    font-size: 64px;
-    line-height: 100%;
-    letter-spacing: 0%;
+.hero-image img {
+    border-radius: 20px;
+    object-fit: cover;
 }
 
-.text{
+/* ===== ТЕКСТИ СЕКЦІЙ ===== */
+
+.accent {
+    color: var(--color-brand);
+}
+
+.header-2-text {
+    margin-bottom: 24px;
     color: var(--color-brand-dark);
-    font-family: Roboto;
-    font-weight: 400;
-    font-style: Regular;
-    font-size: 22px;
-    line-height: 38px;
-    letter-spacing: 0%;
+    font-family: "Play", sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 1;
 }
 
-.fat-text{
-    font-family: Roboto;
-    font-weight: 600;
-    font-style: SemiBold;
+.text {
+    margin-bottom: 16px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
     font-size: 22px;
     line-height: 38px;
-    letter-spacing: 0%;
+}
+
+.fat-text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 38px;
     text-transform: capitalize;
 }
 
-.text-3-section{
-    font-family: Roboto;
-    font-weight: 400;
-    font-style: Regular;
-    font-size: 18px;
-    line-height: 24px;
-    letter-spacing: 0%;
-    text-align: center;
-    color:#000000;
+/* ===== ЧОМУ МИ (секція з хвилею) ===== */
+
+#why-us-section {
+    padding-top: 180px;
+    /* опускає заголовок нижче хвилі */
+    padding-bottom: 100px;
+    background-image: url("../images/about-wave.png");
+    /* твоя хвиля */
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: top center;
 }
 
-.header-3-text{
-    font-family: Roboto;
+.advantages-list {
+    display: flex;
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.advantage-card {
+    padding: 24px;
+    border-radius: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.text-3-section {
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
-    font-style: Regular;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+}
+
+/* ===== ПРОЦЕДУРИ ===== */
+
+.procedures-list {
+    display: flex;
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.procedure-card {
+    height: 300px;
+    border-radius: 16px;
+    background-color: var(--color-brand-dark);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 24px;
+}
+
+.header-3-text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
     font-size: 22px;
     line-height: 26px;
-    letter-spacing: 0%;
     text-align: center;
-    vertical-align: middle;
     color: var(--color-brand-white);
 }
 
-/* Footer */
-.address-link{
-    color: var(--color-brand-dark);
-    font-family: Roboto;
+/* ===== FOOTER ===== */
+
+.footer {
+    padding: 60px 0;
+    background-color: var(--color-secondary-dark-blue);
+    /* якщо є фонова картинка футера, підстав її тут */
+    /* background-image: url("../images/footer-bg.png");
+     background-repeat: no-repeat;
+     background-size: cover; */
+    color: var(--color-brand-white);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.footer-address {
+    max-width: 420px;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+/* посилання у футері */
+.footer .link {
+    color: var(--color-brand-white);
+}
+
+.footer .link:hover {
+    color: var(--color-secondary-yellow);
+}
+
+.address-link {
+    color: var(--color-brand-white);
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
-    font-style: Regular;
     font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0%;
+    line-height: 1;
     text-decoration: none;
 }
 
 .address-link:hover {
-    color: var(--color-brand);
+    color: var(--color-secondary-yellow);
 }
 
-.address-copyright{
-    font-family: Roboto;
-    font-style: Regular;
+.address-copyright {
+    margin-top: 8px;
+    font-family: "Roboto", sans-serif;
     font-size: 13px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    color: var(--color-secondary-medium-gray);
+    line-height: 1;
+    color: var(--color-brand-white);
 }
