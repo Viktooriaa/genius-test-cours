@@ -9,12 +9,14 @@
     --color-secondary-yellow: #ffd028;
 }
 
+
 /* Базові стилі */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
+
 
 body {
     margin: 0;
@@ -23,17 +25,20 @@ body {
     background-color: #ffffff;
 }
 
+
 img {
     display: block;
     max-width: 100%;
     height: auto;
 }
 
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
+
 
 h1,
 h2,
@@ -43,13 +48,16 @@ p {
     margin: 0;
 }
 
+
 address {
     font-style: normal;
 }
 
+
 .section {
     padding: 80px 0;
 }
+
 
 /* Контейнер */
 .container {
@@ -58,13 +66,35 @@ address {
     padding: 0 15px;
 }
 
+
 /* ===== HEADER ===== */
 
+/* ===== HEADER (fixed, матове скло) ===== */
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    /* напівпрозора біла плашка */
+    background: rgba(255, 255, 255, 0.55);
+
+    /* ефект матового скла */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
     padding: 20px 0;
+
+    /* ДОДАНО — робить хедер відокремленим та нерухомим візуально */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -73,21 +103,21 @@ address {
 .header-nav {
     display: flex;
     align-items: center;
-    gap: 56px;
+    gap: 240px;
 }
 
 .nav-list {
     display: flex;
-    gap: 40px;
+    gap: 56px;
 }
 
 .header-socials {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 32px;
 }
 
-/* Посилання в меню */
+/* посилання в меню */
 .link {
     color: var(--color-brand-dark);
     text-decoration: none;
@@ -101,23 +131,55 @@ address {
     color: var(--color-brand);
 }
 
-/* ===== HERO ===== */
+/* ===== HERO (фон, шторка, хвиля) ===== */
 
 .hero-section {
-    padding: 122px 0 157px;
+    position: relative;
+
+    /* відступ з урахуванням fixed-хедера */
+    padding: 160px 0 140px;
+
+    /* фото-фон */
+    background-image: url("../images/masage-face.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top right;
+
+    /* нижня хвиля */
+    border-bottom-left-radius: 180px;
+    border-bottom-right-radius: 180px;
+    overflow: hidden;
+}
+
+.hero-section {
+    padding-top: 180px;
+    /* не менше 160–180px */
+}
+
+/* біла напівпрозора шторка зліва */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 55%;
+    /* ширина шторки */
+    background: linear-gradient(to right,
+            #ffffff 0%,
+            rgba(255, 255, 255, 0.96) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
 }
 
 .hero-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 32px;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content {
     max-width: 530px;
 }
 
+/* текст у hero */
 .hero-label {
     margin-bottom: 16px;
     color: var(--color-brand-dark);
@@ -149,6 +211,7 @@ address {
     background-color: transparent;
 }
 
+/* маленький текст під кнопкою */
 .text-1section {
     margin-top: 16px;
     max-width: 300px;
@@ -164,6 +227,67 @@ address {
     object-fit: cover;
 }
 
+/* ===== ABOUT (Перевтілюйтесь в Beauty Zone) ===== */
+/* ===== ТЕКСТИ ABOUT ===== */
+
+.accent {
+    color: var(--color-brand);
+}
+
+.header-2-text-upgrade {
+    margin-bottom: 24px;
+    color: var(--color-brand-dark);
+    font-family: "Play", sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 1.1;
+}
+
+/* ВЕЛИКИЙ текст у секції "Перевтілюйтесь в Beauty Zone" */
+.text-1-section {
+    margin-bottom: 16px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 38px;
+    color: var(--color-brand-dark);
+}
+
+.fat-text {
+    font-weight: 600;
+}
+
+#about-us-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* Ліва колонка — текст */
+.about-text {
+    flex: 1;
+}
+
+/* Права колонка — фото */
+.about-photos {
+    position: relative;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.photo-circle {
+    width: 335px;
+    height: 328px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin-left: 28px;
+}
+
 /* ===== ТЕКСТИ СЕКЦІЙ ===== */
 
 .accent {
@@ -177,6 +301,7 @@ address {
     font-weight: 700;
     font-size: 64px;
     line-height: 1;
+    text-align: center;
 }
 
 .text {
@@ -199,10 +324,8 @@ address {
 
 #why-us-section {
     padding-top: 180px;
-    /* опускає заголовок нижче хвилі */
     padding-bottom: 100px;
     background-image: url("../images/about-wave.png");
-    /* твоя хвиля */
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: top center;
@@ -231,42 +354,144 @@ address {
 }
 
 /* ===== ПРОЦЕДУРИ ===== */
+.procedures-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin: 40px auto 0 auto;
+}
 
 .procedures-list {
     display: flex;
     gap: 24px;
-    margin-top: 40px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    /* по центру */
+    justify-content: center;
+    max-width: 930px;
+    /* як у макеті */
+}
+
+.procedures-item {
+    flex: 0 0 274px;
 }
 
 .procedure-card {
-    height: 300px;
-    border-radius: 16px;
-    background-color: var(--color-brand-dark);
+    position: relative;
+    width: 100%;
+    height: 430px;
+    /* трохи вища */
+    border-radius: 200px;
+    /* більш овальна форма */
+    overflow: hidden;
+
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding: 24px;
 }
 
-.header-3-text {
+.procedure-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.procedure-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.65) 100%);
+}
+
+.procedure-card .header-3-text {
+    position: relative;
+    z-index: 2;
+
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 22px;
-    line-height: 26px;
+    line-height: 1.3;
     text-align: center;
     color: var(--color-brand-white);
+
+    margin-bottom: 32px;
+}
+.slider-arrow {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #d1d1d1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 20px;
+    color: var(--color-brand-dark);
+}
+.slider-arrow:hover {
+    background: var(--color-brand);
+    color: #ffffff;
 }
 
+/* крапочки під слайдером */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #c4c4c4;
+}
+
+.slider-dot.active {
+    background: var(--color-brand);
+}
+
+/*container zapus  */
+.text-container {
+    font-family: Roboto;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: right;
+}
 /* ===== FOOTER ===== */
+
 
 .footer {
     padding: 60px 0;
-    background-color: var(--color-secondary-dark-blue);
-    /* якщо є фонова картинка футера, підстав її тут */
-    /* background-image: url("../images/footer-bg.png");
-     background-repeat: no-repeat;
-     background-size: cover; */
     color: var(--color-brand-white);
+    background-color: var(--color-brand-dark);
+    background-image: url("/images/background1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.link-footer{
+    color: var(--color-brand-white);
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
 }
 
 .footer-container {
@@ -276,15 +501,18 @@ address {
     align-items: flex-start;
 }
 
+
 .footer-nav {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
+
 .footer-address {
     max-width: 420px;
 }
+
 
 .footer-contacts {
     display: flex;
@@ -293,21 +521,15 @@ address {
     margin-bottom: 16px;
 }
 
+
 .footer-socials {
     display: flex;
     gap: 16px;
     margin-top: 8px;
 }
 
+
 /* посилання у футері */
-.footer .link {
-    color: var(--color-brand-white);
-}
-
-.footer .link:hover {
-    color: var(--color-secondary-yellow);
-}
-
 .address-link {
     color: var(--color-brand-white);
     font-family: "Roboto", sans-serif;
@@ -317,9 +539,11 @@ address {
     text-decoration: none;
 }
 
+
 .address-link:hover {
     color: var(--color-secondary-yellow);
 }
+
 
 .address-copyright {
     margin-top: 8px;
