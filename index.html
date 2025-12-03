@@ -54,7 +54,7 @@
     </header>
 
     <main>
-      <!-- HERO g-->
+      <!-- HERO -->
       <section class="hero-section">
         <div class="hero-overlay"></div>
 
@@ -116,31 +116,44 @@
       </section>
 
       <!-- WHY US -->
-      <section id="why-us-section" class="section">
+      <section id="why-us-section" class="section advantages-section">
         <div class="container">
-          <h2 class="header-2-text">
-            Чому люди <span class="accent">обирають нас</span>
+          <h2 class="section-title advantages-title">
+            Чому люди <br />
+            <span class="accent">обирають нас</span>
           </h2>
-          <ul class="advantages-list">
-            <li>
-              <article class="advantage-card">
-                <p class="text-3-section">
+
+          <ul class="list advantages-flex-list">
+            <li class="advantages-list">
+              <article class="border-card">
+                <svg class="advantages-icons" width="48" height="48">
+                  <use href="./images/icons.svg#icon-science"></use>
+                </svg>
+                <p class="advantages-text">
                   Всі наші косметологи мають вищу медичну освіту та стаж роботи
                   від 5 років
                 </p>
               </article>
             </li>
-            <li>
-              <article class="advantage-card">
-                <p class="text-3-section">
+
+            <li class="advantages-list">
+              <article class="border-card">
+                <svg class="advantages-icons" width="48" height="48">
+                  <use href="./images/icons.svg#icon-banku"></use>
+                </svg>
+                <p class="advantages-text">
                   Використовуємо тільки професійне обладнання та косметику,
                   перевірену часом
                 </p>
               </article>
             </li>
-            <li>
-              <article class="advantage-card">
-                <p class="text-3-section">
+
+            <li class="advantages-list">
+              <article class="border-card">
+                <svg class="advantages-icons" width="48" height="48">
+                  <use href="./images/icons.svg#icon-crown"></use>
+                </svg>
+                <p class="advantages-text">
                   Наша мета — підкреслити переваги та приховати недоліки, а не
                   переробити
                 </p>
@@ -159,7 +172,11 @@
 
           <div class="procedures-slider">
             <!-- стрілка назад -->
-            <button class="slider-arrow" type="button">&#8592;</button>
+            <button class="carousel-button" type="button">
+              <svg class="carousel-arrow" width="16" height="16">
+                <use href="./images/icons.svg#icon-left"></use>
+              </svg>
+            </button>
 
             <ul class="procedures-list">
               <li class="procedures-item">
@@ -197,7 +214,11 @@
             </ul>
 
             <!-- стрілка вперед -->
-            <button class="slider-arrow" type="button">&#8594;</button>
+            <button class="carousel-button" type="button">
+              <svg class="carousel-arrow" width="16" height="16">
+                <use href="./images/icons.svg#icon-arrow"></use>
+              </svg>
+            </button>
           </div>
 
           <div class="slider-dots">
@@ -214,19 +235,29 @@
           <h2 class="header-2-text">
             Як нас <span class="accent">знайти</span>
           </h2>
-          <p class="text-container">
-            Запишіться <span class="accent">безкоштовно</span> та отримайте
-            подарунок
-          </p>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.476433533146!2d30.520421799999998!3d50.45085220000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce50851426df%3A0x58296d35bd78df01!2z0L_RgNC-0LLRg9C70L7QuiDQotCw0YDQsNGB0LAg0KjQtdCy0YfQtdC90LrQsCwgNSwg0JrQuNGX0LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1762110105920!5m2!1suk!2sua"
-            width="600"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+
+          <div class="contacts-container">
+            <!-- КАРТА  -->
+            <iframe
+              class="contacts-map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.476433533146!2d30.520421799999998!3d50.45085220000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce50851426df%3A0x58296d35bd78df01!2z0L_RgNC-0LLRg9C70L7QuiDQotCw0YDQsNGB0LAg0KjQtdCy0YfQtdC90LrQsCwgNSwg0JrQuNGX0LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1762110105920!5m2!1suk!2sua"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+
+            <!-- ФОРМА  -->
+            <div class="contact-form">
+              <p class="text-container">
+                Запишіться <span class="accent">безкоштовно</span> та отримайте
+                подарунок
+              </p>
+              <!-- форма тут -->
+            </div>
+          </div>
         </div>
       </section>
     </main>
